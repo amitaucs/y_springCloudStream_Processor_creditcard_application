@@ -1,0 +1,24 @@
+server:
+  port: 8005
+spring:
+  application:
+    name: verify-credit-card-application-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/cc_verification
+    username: root
+    password: root
+  jpa:
+    generate-ddl: true
+    show-sql: false
+  cloud:
+    stream:
+     function:
+       definition: verifyCreditCardApplication
+     bindings:
+       verifyCreditCardApplication-in-0:
+         destination: CreditCardApplication
+         group: creditCard
+       verifyCreditCardApplication-out-0:
+         destination: CreditCardVerification
+         group: creditCard
+
