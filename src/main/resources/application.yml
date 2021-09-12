@@ -25,6 +25,11 @@ spring:
        verifyCreditCardApplication-out-0:
          destination: CreditCardVerification
          group: creditCard
+     rabbit:
+      bindings:
+        verifyCreditCardApplication-out-0:
+          producer:
+            autoBindDlq: true
   rabbitmq:
     host: ${RMQ_HOSTNAME:localhost}
     port: ${RMQ_PORT:5672}
