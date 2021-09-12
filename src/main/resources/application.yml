@@ -4,7 +4,7 @@ spring:
   application:
     name: verify-credit-card-application-service
   datasource:
-    url: jdbc:mysql://${MSQL_HOSTNAME:localhost}:${MSQL_PORT:3306}/${MSQL_DB_NAME:cc_details}
+    url: jdbc:mysql://${MSQL_HOSTNAME:localhost}:${MSQL_PORT:3306}/${MSQL_DB_NAME:cc_verification}
     username: ${MSQL_USERNAME:root}
     password: ${MSQL_PASSWORD:root}
 
