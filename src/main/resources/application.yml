@@ -16,9 +16,14 @@ spring:
     show-sql: false
   cloud:
     stream:
-     function:
+      kafka:
+        binder:
+          brokers: ${KAFKA_BROKER_HOST:localhost}
+          defaultBrokerPort: ${KAFKA_BROKER_PORT:9092}
+          auto-create-topics: true
+      function:
        definition: verifyCreditCardApplication
-     bindings:
+      bindings:
        verifyCreditCardApplication-in-0:
          destination: CreditCardApplication
          group: creditCard
